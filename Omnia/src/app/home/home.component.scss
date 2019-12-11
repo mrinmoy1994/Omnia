@@ -1,0 +1,84 @@
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid rgb(37, 158, 53);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    scrollbar-width : thin;
+    scrollbar-color : rgb(138, 226, 160) rgba(168, 219, 181, 0.308);  
+  }
+  
+  button {
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover{
+    background-color: #578d5973;
+  }
+  
+  div {
+    border-radius: 5px;
+   // padding: 20px;
+  }
+
+.ItemBlock{
+  text-align: left;
+  margin:0%;
+  padding: 0%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius:  0%;
+  border-bottom: 1px solid gray;
+  vertical-align: 50%;
+  color: white;
+}
+
+.ItemBlock:hover{
+  //border: 1px solid rgb(17, 240, 47);
+  background-color: rgb(37, 158, 53);
+}
+.ItemBlock:active {
+  background-color: rgb(37, 158, 53);
+}
+
+.ItemBlock:focus {
+  background-color: rgb(37, 158, 53);
+}
+
+.ItemScroll{
+  overflow-y: scroll;
+  text-align: left; 
+  height: 40vmax;
+  scrollbar-width : thin;
+
+  scrollbar-color : rgb(138, 226, 160) rgba(168, 219, 181, 0.308);
+}
+
+::-webkit-scrollbar{
+ // display: none;
+ width: 8px;
+ height: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(168, 219, 181, 0.308);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(138, 226, 160);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(37, 158, 53);
+}
