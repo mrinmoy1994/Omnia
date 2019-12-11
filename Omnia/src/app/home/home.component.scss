@@ -44,14 +44,10 @@ input[type=text], select, textarea {
 }
 
 .ItemBlock:hover{
-  //border: 1px solid rgb(17, 240, 47);
-  background-color: rgb(37, 158, 53);
+  border: 1px solid rgb(17, 240, 47);
+  //background-color: rgb(37, 158, 53);
 }
-.ItemBlock:active {
-  background-color: rgb(37, 158, 53);
-}
-
-.ItemBlock:focus {
+.active {
   background-color: rgb(37, 158, 53);
 }
 

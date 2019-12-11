@@ -72,15 +72,15 @@ app.get('/powers', (req, res) => {
 });
 
 app.put('/updateDetails',(req, res) => {
-    //console.log(req.body);
-    var des = req.body.description;
+    console.log(req.body);
+    var des = req.body.Causes;
    //console.log(des);
     var fs = require('fs');
     let rawdata = fs.readFileSync('D:/Omnia/ms/heroes/test.json');
     let student = JSON.parse(rawdata);
     //console.log(student);
-    student.description = des;
-    //console.log(student.description);
+    student[req.body.Id].Causes = des;
+    console.log(student[req.body.Id].Causes );
     let data = JSON.stringify(student);
     fs.writeFileSync('D:/Omnia/ms/heroes/test.json', data);
     
@@ -88,7 +88,7 @@ app.put('/updateDetails',(req, res) => {
     console.log('Updated !!');
     var contents = fs.readFileSync('D:/Omnia/ms/heroes/test.json', 'utf8');
     res.send(contents);
-    console.log(contents);
+   // console.log(contents);
 
 });
 

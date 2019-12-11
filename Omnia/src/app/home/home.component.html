@@ -5,8 +5,8 @@
 </div>
 <div class="col-md-4 ItemScroll">
 
-  <div *ngFor="let item of response; let i = index" style="padding: 0%;">
-    <div class="ItemBlock" style="cursor: pointer;" (click)="setValue(i)">{{item.Id}}</div>
+  <div class="item" *ngFor="let item of response; let i = index" style="padding: 0%;" >
+    <div class="ItemBlock" style="cursor: pointer;" (click)="setValue(i)" [class.active]="selectedId === i">{{item.Id}}</div>
   </div>
 </div>
 <div class="col-md-8" style="height : 40vmax; background-color: rgba(143, 173, 143, 0.274); text-align: center;">
@@ -98,7 +98,7 @@
         </div>
         <div class="col-md-9">
     <textarea type="text" id="lname" style="color:black; padding: 1%; width: 80%; height: 200px; overflow-y: scroll;text-align: left" name="version"
-      placeholder="version..">{{selectedElement && selectedElement.Causes}}</textarea>
+      placeholder="version.." [(ngModel)]="selectedElement && selectedElement.Causes"></textarea>
 
     </div>
   </div>

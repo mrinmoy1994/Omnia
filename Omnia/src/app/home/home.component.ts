@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllDetails(id : any) {
+    this.selectedId=id;
     this.homeService.getDetails().subscribe(
       response => {
         this.response = response;
@@ -60,9 +61,9 @@ export class HomeComponent implements OnInit {
     this.showMsg = '';
     this.showSuccess = '';
 
-    var responsedata = this.getAllDetails(this.selectedId);
+   // var responsedata = this.getAllDetails(this.selectedId);
     // console.log(responsedata.description);
-    if (this.response.description === '' || this.response.description === null) {
+    if (this.selectedElement.Causes === null || this.selectedElement.Causes === '' ) {
       this.showMsg = "Description required !!!";
     }
     // else if(responsedata.description !== this.response_back.description)
@@ -72,14 +73,19 @@ export class HomeComponent implements OnInit {
     //   this.showMsg = "Document has been updated, after loading !!!! Reload the page to get the updated value !!!";
     // }
     else {
+      console.log(this.selectedId);
+      console.log(this.selectedElement.Causes);
       var data = {
-        "description": this.response.description
+        "Id" : this.selectedId,
+        "Causes": this.selectedElement.Causes.toString().split(",")
       };
+      console.log(data);
       this.homeService.putDetails(data).subscribe(
         response => {
           console.log(response);
-          this.response = response;
-          this.response_back = response;
+          //this.response = response;
+          //this.response_back = response;
+          this.getAllDetails(this.selectedId);
           this.showSuccess = 'Updated Successfuly !!';
         }
       );
